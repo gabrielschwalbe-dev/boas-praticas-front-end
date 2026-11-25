@@ -1,0 +1,168 @@
+/* =========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #1e3a8a;
+    --cor-secundaria: #3b82f6;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #475569;
+    --cor-branco: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container centralizador para limitar a largura em telas grandes */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+.cabecalho-principal {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.titulo-principal {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #dbeafe;
+    font-weight: 400;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL E INTRODUÇÃO
+   ========================================= */
+main {
+    flex: 1; /* Empurra o rodapé para o final da tela */
+}
+
+.secao-introducao {
+    background-color: var(--cor-branco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2.5rem;
+}
+
+.secao-introducao h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.secao-introducao p {
+    color: var(--cor-texto-suave);
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   SEÇÃO DE CARDS (LAYOUT RESPONSIVO)
+   ========================================= */
+.titulo-secao {
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.grade-cards {
+    display: grid;
+    /* Cria colunas automáticas que se adaptam ao tamanho da tela */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Estilo base compartilhado por todos os cards */
+.card {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border-top: 5px solid var(--cor-secundaria);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: var(--cor-texto-suave);
+    font-size: 0.95rem;
+}
+
+/* Destaques individuais por característica */
+.card-legibilidade {
+    border-top-color: #2563eb; /* Azul */
+}
+
+.card-organizacao {
+    border-top-color: #0d9488; /* Verde-água */
+}
+
+.card-consistencia {
+    border-top-color: #7c3aed; /* Roxo */
+}
+
+.card-manutenibilidade {
+    border-top-color: #d97706; /* Âmbar */
+}
+
+.card-colaboracao {
+    border-top-color: #16a34a; /* Verde */
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+.rodape-principal {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   AJUSTES PARA TELAS MENORES (CELULARES)
+   ========================================= */
+@media (max-width: 600px) {
+    .titulo-principal {
+        font-size: 1.75rem;
+    }
+
+    .secao-introducao {
+        padding: 1.5rem;
+    }
+}
